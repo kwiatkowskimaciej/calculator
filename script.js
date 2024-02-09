@@ -30,3 +30,18 @@ function operate(operator, firstNumber, secondNumber) {
       return divide(firstNumber, secondNumber);
   }
 }
+
+let displayValue = '';
+const display = document.querySelector('.display');
+const numberButtons = document.querySelectorAll('.numbers button');
+
+function populateDisplay(value) {
+  displayValue += value;
+  display.textContent = displayValue;
+}
+
+numberButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    populateDisplay(e.target.textContent);
+  });
+});
