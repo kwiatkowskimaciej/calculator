@@ -34,7 +34,7 @@ let secondNumber = null;
 
 const display = document.querySelector('.display');
 display.textContent = '0';
-const numbers = document.querySelectorAll('.numbers button');
+const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('.operator');
 const equals = document.querySelector('#equals');
 const clear = document.querySelector('#clear');
@@ -66,7 +66,10 @@ function getResult() {
     firstNumber = operate(operator, firstNumber, secondNumber);
     operator = null;
     secondNumber = null;
-    display.textContent = firstNumber;
+    display.textContent =
+      String(firstNumber).length > 10
+        ? String(firstNumber).slice(0, 10)
+        : firstNumber;
   }
   nextValue = '';
 }
@@ -83,7 +86,7 @@ operators.forEach((operatorBtn) => {
       getResult();
     }
 
-    operator = e.target.textContent;
+    operator = e.target.dataset.operator;
 
     if (nextValue != '') {
       firstNumber = +nextValue;

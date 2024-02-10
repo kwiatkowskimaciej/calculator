@@ -1,3 +1,7 @@
+:root {
+  --gap: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +13,74 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #393e42;
+  font-family: sans-serif;
+}
+
+.calculator {
+  background-color: #1f2225;
+  padding: 16px;
+  border-radius: 16px;
 }
 
 .display {
-  font-size: 2rem;
+  font-size: 36px;
+  margin-bottom: 16px;
+  padding: 8px;
+  color: #e0e9f8;
+  height: 64px;
+  background-color: #393e42;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 button {
   height: 50px;
   min-width: 50px;
+  border-radius: 4px;
+  border: none;
+  background-color: #27282b;
+  color: #e0e9f8;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+button.operator,
+button#equals {
+  background-color: #2ba059;
+}
+
+.functions.operators {
+  display: flex;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.container {
+  display: flex;
+  gap: var(--gap);
+}
+
+.numbers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.operators.equals {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.row {
+  display: flex;
+  gap: var(--gap);
+}
+
+.zero,
+#equals {
+  flex: 2;
 }
